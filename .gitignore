@@ -1,0 +1,10 @@
+.DS_Store
+.eslintignore
+.eslintrc.js
+.prettierignore
+node_modules
+*.log
+*.pdf
+*.png
+prettier.config.js
+

@@ -1,0 +1,58 @@
+{
+  "name": "cocktail-vis",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "beemo create-config prettier && beemo eslint \"./{src,test,storybook}/**/*.{js,jsx}\"",
+    "lint:fix": "beemo create-config prettier && beemo eslint --fix \"./{src,test,storybook}/**/*.{js,jsx}\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "type": "NODE_ENV=development beemo typescript --noEmit",
+    "storybook": "start-storybook -p 9001 -c ./storybook/config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williaster/cocktail.git"
+  },
+  "author": "chris.card.williams@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/williaster/cocktail/issues"
+  },
+  "homepage": "https://github.com/williaster/cocktail#readme",
+  "dependencies": {
+    "@storybook/addon-knobs": "^4.0.2",
+    "@storybook/addon-options": "^4.0.3",
+    "@storybook/react": "^4.0.2",
+    "@vx/vx": "0.0.185",
+    "d3": "^5.9.1",
+    "node-fetch": "^2.3.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "storybook-addon-jsx": "^5.4.0"
+  },
+  "devDependencies": {
+    "@data-ui/build-config": "^0.0.40"
+  },
+  "beemo": {
+    "module": "@data-ui/build-config",
+    "drivers": [
+      "babel",
+      "eslint",
+      {
+        "driver": "jest",
+        "env": {
+          "NODE_ENV": "test"
+        }
+      },
+      "prettier",
+      "typescript"
+    ],
+    "eslint": {
+      "rules": {
+        "sort-keys": "off"
+      }
+    }
+  }
+}
